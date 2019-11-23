@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Book Tracker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Book Tracker 4000</h1>
+      <h2>The latest and greates in book tracking technology!</h2>
+      <div id="searchbox">
+        <input type="text" id="title" placeholder="Book Title" />
+        <input type="text" id="author" placeholder="Book Author" />
+        <br />
+        <button type="submit">Add New</button>
+      </div>
+      <div id="tables">
+        <table id="read">
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Read/Unread</th>
+          </tr>
+        </table>
+
+        <table id="unread">
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Read/Unread</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
