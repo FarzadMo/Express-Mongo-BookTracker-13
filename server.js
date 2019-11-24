@@ -54,6 +54,42 @@ app.get("/unread", function(req, res) {
   });
 });
 
+app.put("/markunread/:id", function(req, res) {
+  db.books.update(
+    {
+      _id: mongojs.ObjectID(req.params.id)
+    },
+    {
+      $set: { read: false }
+    },
+    function(error, updated) {
+      if (error) {
+        console.log(error);
+      } else {
+        res.send(updated);
+      }
+    }
+  );
+});
+
+app.put("/markread/:id", function(req, res) {
+  db.books.update(
+    {
+      _id: mongojs.ObjectID(req.params.id)
+    },
+    {
+      $set: { read: true }
+    },
+    function(error, updated) {
+      if (error) {
+        console.log(error);
+      } else {
+        res.send(updated);
+      }
+    }
+  );
+});
+
 app.listen(3000, function() {
   console.log("app is listening on port 3000");
 });
